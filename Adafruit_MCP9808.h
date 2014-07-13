@@ -19,6 +19,8 @@
 
 #if ARDUINO >= 100
  #include "Arduino.h"
+#elif defined(SPARK)
+ #include "application.h"
 #else
  #include "WProgram.h"
 #endif
@@ -26,6 +28,7 @@
 #ifdef __AVR_ATtiny85__
  #include "TinyWireM.h"
  #define Wire TinyWireM
+#elif defined(SPARK)
 #else
  #include <Wire.h>
 #endif
